@@ -1,0 +1,799 @@
+@import url("https://fonts.googleapis.com/css2?family=Poppins&display=swap" );
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing:border-box;
+}
+
+.preloader {
+    width:100%;
+    height:100%;
+    position:fixed;
+    top:0;
+    display:flex;
+    justify-content:center;
+    align-items:center;
+    flex-direction:column;
+    background-color: limegreen;
+    z-index:20;
+    pointer-events: none;
+}
+
+
+.preloader .logo1{
+    font-size:4rem;
+    font-weight:bold;
+    color:#fff;
+}
+
+.preloader h1 {
+    color:#fff;
+    margin-top:30px;
+    animation: animate 1s infinite;
+}
+
+@keyframes animate {
+    from {
+        opacity:0;
+    }
+    to {
+        opacity:1;
+    }
+}
+
+.disappear {
+    animation: vanish 1s ease-out forwards;
+}
+
+@keyframes vanish {
+    50% {
+        transform: translateX(100%);
+    }
+    100% {
+        opacity:0;
+        transform: translateX(200%);
+        display:none;
+    }
+}
+
+/*----for larger screens---*/
+
+@media screen and (min-width:1024px) {
+    body {
+        font-family: 'Poppins', sans-serif;
+        cursor: none;
+        overflow-x: hidden;
+    }
+
+    .light {
+        width:100%;
+        height:100%;
+        color:black;
+        background-size: 40px 40px;
+        background-image: radial-gradient(circle, limegreen 1px, rgba(0, 0, 0, 0) 1px);
+        background-color:#f8f8ff;
+    }
+
+    .dark {
+        width:100%;
+        height:100%;
+        color:#fff;
+        background-size: 40px 40px;
+        background-image: radial-gradient(circle, limegreen 1px, rgba(0, 0, 0, 0) 1px);
+        background-color:#000;
+    }
+    
+    #theme header {
+        width:100%;
+        height:4rem;
+        display:flex;
+        align-items: center;
+    }
+
+    #theme header .box .toggle-btn {
+        width:40px;
+        height:20px;
+        background-color:grey;
+        margin-left:20px;
+        border-radius:10px;
+        position:relative;
+        box-shadow:1px 1px rgba(0, 0, 0, 0.589);
+        transition:all .2s ease-in-out;
+    }
+
+    #theme header .box .toggle-btn:hover {
+        cursor:pointer;
+    }
+
+    #theme header .box .toggle-btn .inner-circle {
+        width:20px;
+        height:20px;
+        background-color:#fff;
+        border-radius:50%;
+        position:absolute;
+        left:3%;
+        transition:all .2s ease-in-out;
+    }
+    
+    #theme header .logo {
+        margin-left:30px;
+        font-weight:bold;
+        font-size:1.2rem;
+        color:limegreen;
+        text-decoration:none;
+    }
+
+    #theme header .logo:hover {
+        color:grey;
+    }
+    
+    
+    #theme header .logo i {
+        margin-right:5px;
+    }
+    
+    #theme header .box {
+        display:flex;
+        width:75%;
+        margin-left:auto;
+    }
+    
+    #theme header .box a {
+        margin-right:20px;
+        color:#000;
+        text-decoration:none;
+        font-weight:bold;
+    }
+
+    #theme header .box .about, #theme header .box .share {
+        transition: all .2s ease-in-out;
+    }
+
+    #theme header .box .about:hover, #theme header .box .share:hover {
+        border: 2px solid limegreen;
+        padding: 5px 10px;
+        border-radius:40px;
+        background-color: limegreen;
+        color:#fff;
+    }
+    
+    #theme header .box a i {
+        margin-right:10px;
+    }
+    
+    #theme main {
+        margin-top:70px;
+        display:grid;
+        grid-template-columns: repeat(12, 1fr);
+        grid-gap:10px;
+    }
+    
+    #theme main .content {
+        grid-column:2/6;
+    }
+    
+    #theme main .content h1 {
+        font-size:3rem;
+        transition:all .2s ease-in-out;
+    }
+    
+    #theme main .content h1:hover {
+        transform: scale(1.05);
+    }
+    
+    #theme main .content h1:nth-child(2) {
+        color:limegreen;
+    }
+    
+    #theme main .content p {
+        margin-top:30px;
+        line-height:30px;
+        font-weight: bold;
+    }
+    
+    #theme main .content h4 {
+        margin-top:70px;
+    }
+    
+    #theme main .content h4 a {
+        text-decoration:none;
+        background-color: limegreen;
+        border:2px solid limegreen;
+        color:#fff;
+        padding:15px 40px;
+        border-radius:10px;
+    }
+    
+    #theme main .content h4 a i {
+        margin-right:10px;
+    }
+    
+    #theme main .container {
+        grid-column: 7/10;
+    }
+    
+    #theme main .container .box {
+        background-image: url("img/burna.JPG");
+        background-repeat:no-repeat;
+        background-size:100%;
+        background-position:center;
+        width:350px;
+        height:350px;
+        border-radius:200px 0px 300px 0px;
+        display:flex;
+        flex-direction:column;
+        justify-content:space-between;
+        align-items: flex-end;
+        position:relative;
+        animation: change 5s ease-in-out infinite alternate-reverse;
+        transition:all .2 ease-in-out;
+    }
+
+    #theme main .container .box:hover {
+        opacity:.6;
+    }
+    
+    @keyframes change {
+        0% {
+            background-image: url("img/oluwa_burna.JPG");
+        }
+        25%{
+            background-image: url("img/tinashe_songs_for_you.JPG");
+        }
+        50% {
+            background-image: url("img/adekunle_gold_pic.JPG");
+        }
+        75% {
+            background-image: url("img/24kmagic_cover.JPG");
+        }
+        100% {
+            background-image: url("img/snohA.JPG");
+        }
+    }
+    
+    #theme main .container .box .circle-box {
+        background-image: url("img/twice_as_tall.JPG");
+        background-repeat:no-repeat;
+        background-size:100%;
+        background-position:center;
+        width:150px;
+        height:150px;
+        border-radius:50%;
+        margin-top:-50px;
+        position:absolute;
+        right:-10%;
+        animation: change2 5s ease-in-out infinite alternate-reverse;
+    }
+    
+    @keyframes change2 {
+        0% {
+            background-image: url("img/twice_as_tall.JPG");
+        }
+       
+        25%{
+            background-image: url("img/tinashe1.JPG");
+        }
+        
+        50% {
+            background-image: url("img/adekunle_gold_cover.JPG");
+        }
+        75% {
+            background-image: url("img/bruno_mars.JPG");
+        }
+        100% {
+            background-image: url("img/snohsong.JPG");
+        }
+    }
+
+    #theme main .container .box .eye {
+        width:40px;
+        height:40px;
+        border-radius: 50%;
+        border:2px solid grey;
+        background-color: #f8f8ff;
+        position:absolute;
+        bottom:0;
+        left:0;
+        margin-left:-10px;
+        margin-bottom:-10px;
+        display:flex;
+        justify-content:center;
+        align-items:center;
+    }
+
+    #theme main .container .box .eye .pupil{
+        width:18px;
+        height:18px;
+        border-radius:50%;
+        background-color:rgba(0, 0, 0, 0.452);
+        display:flex;
+        justify-content: center;
+        align-items: center;
+        animation: turn .85s infinite alternate-reverse;
+    }
+
+    @keyframes turn {
+        0% {
+            transform: translateX(-5px);
+        }
+        50% {
+            transform: translateX(5px);
+        }
+        80% {
+            transform: translateX(0px);
+        }
+        100% {
+            transform: translateX(0px);
+        }
+    }
+
+    #theme main .container .box .eye .pupil .iris {
+        width:10px;
+        height:10px;
+        border-radius:50%;
+        background-color:rgba(0, 0, 0, 0.644);
+    }
+     
+   #theme .container .image-content {
+        margin-top:30px;
+        display:flex;
+        justify-content: space-evenly;
+        animation: shift 8s infinite alternate-reverse;
+    }
+
+    @keyframes shift {
+        from {
+            transform: translate(-20px);
+            opacity:1;
+        }
+        to {
+            transform: translate(100px);
+            opacity:0;
+        }
+    }
+
+    #theme .container .image-content div {
+        margin-right:10px;
+    }
+    
+    #theme .container .image-content .pic {
+        background-image: url("img/oluwa_burna_2.JPG");
+        background-repeat:no-repeat;
+        background-size:100%;
+        background-position:center;
+        width:60px;
+        height:60px;
+        border-radius:50%;
+        border: 5px solid limegreen;
+    }
+    #theme .container .image-content .pic2 {
+        background-image: url("img/bruno_mars.JPG");
+        background-repeat:no-repeat;
+        background-size:100%;
+        background-position:center;
+        width:60px;
+        height:60px;
+        border-radius:50%;
+        border: 5px solid limegreen;
+    }
+    #theme .container .image-content .pic3 {
+        background-image: url("img/IMG_5259.JPG");
+        background-repeat:no-repeat;
+        background-size:100%;
+        background-position:center;
+        width:60px;
+        height:60px;
+        border-radius:50%;
+        border: 5px solid limegreen;
+    }
+    #theme .container .image-content .pic4 {
+        background-image: url("img/tinashe2.JPG");
+        background-repeat:no-repeat;
+        background-size:100%;
+        background-position:center;
+        width:60px;
+        height:60px;
+        border-radius:50%;
+        border: 5px solid limegreen;
+    }
+    #theme .container .image-content .pic5 {
+        background-image: url("img/adekunleG.JPG");
+        background-repeat:no-repeat;
+        background-size:100%;
+        background-position:center;
+        width:60px;
+        height:60px;
+        border-radius:50%;
+        border: 5px solid limegreen;
+    }
+    
+    #theme .cursor {
+        position:fixed;
+        width:60px;
+        height:60px;
+        border:1px solid grey;
+        border-radius:50%;
+        left:0;
+        top:0;
+        pointer-events: none;
+        transform: translate(-50%, -50%);
+        transition: .1s;
+    }
+    
+    #theme .cursor2 {
+        position:fixed;
+        width:8px;
+        height:8px;
+        border:1px solid grey;
+        border-radius:50%;
+        left:0;
+        top:0;
+        pointer-events: none;
+        transform: translate(-50%, -50%);
+        transition: .15s;
+    }
+
+    #theme main .container-mobile, #theme header .logo2 {
+        display:none;
+    }
+    
+}
+
+
+
+/* --- for smaller screens ---- smartphones and tablets*/
+
+
+
+
+@media screen and (max-width: 1023px) {
+    body {
+        font-family: 'Poppins', sans-serif;
+        overflow-x: hidden;
+    }
+
+    .light {
+        width:100%;
+        height:100%;
+        color:black;
+        background-color:#f8f8ff
+    }
+
+    .dark {
+        width:100%;
+        height:100%;
+        color:#fff;
+        background-size: 20px 20px;
+        background-color:#000;
+        background-image: radial-gradient(circle, rgba(50, 205, 50, 0.288) 1px, rgba(0, 0, 0, 0) 1px);
+    }
+
+    
+    #theme header {
+        width:100%;
+        height:4rem;
+        display:flex;
+        align-items: center;
+    }
+
+    #theme header .box .toggle-btn {
+        width:40px;
+        height:20px;
+        background-color:grey;
+        margin-left:5px;
+        border-radius:10px;
+        position:relative;
+        box-shadow:1px 1px rgba(0, 0, 0, 0.589);
+        transition:all .2s ease-in-out;
+    }
+
+    #theme header .box .toggle-btn:hover {
+        cursor:pointer;
+    }
+
+    #theme header .box .toggle-btn .inner-circle {
+        width:20px;
+        height:20px;
+        background-color:#fff;
+        border-radius:50%;
+        position:absolute;
+        left:3%;
+        transition:all .2s ease-in-out;
+    }
+
+     
+    #theme header .logo2 {
+        margin-left:20px;
+        font-weight:bold;
+        font-size:2rem;
+        color:limegreen;
+        text-decoration:none;
+    }
+    
+    #theme header .box {
+        display:flex;
+        width:70%;
+        margin-left:auto;
+    }
+    
+    #theme header .box a {
+        margin-right:20px;
+        color:#000;
+        text-decoration:none;
+        font-weight:bold;
+    }
+    
+    #theme header .box a i {
+        margin-right:10px;
+    }
+
+    #theme main{
+        width:100%;
+        margin:100px auto;
+        background-color:rgba(50, 205, 50, 0.13);
+        border-radius: 400px 0px 0px 0px;
+    }
+
+    #theme main .content {
+        width:80%;
+        margin:0 auto;
+    }
+
+    #theme main .content h1 {
+        text-align:center;
+    }
+
+    #theme main .content h1:nth-child(2) {
+        color:limegreen;
+    }
+
+    #theme main .content p {
+        line-height:30px;
+        margin-top:50px;
+        text-align:center;
+        font-weight:bold;
+    }
+
+    #theme main .container-mobile {
+        margin:150px auto;
+        padding-bottom:50px;
+        width:100%;
+    }
+    
+    #theme main .container-mobile .box-mobile {
+        margin:0 auto;
+        background-image: url("img/burna.JPG");
+        background-repeat:no-repeat;
+        background-size:100%;
+        background-position:center;
+        width:250px;
+        height:250px;
+        border-radius:250px 100px 100px 0px;
+        display:flex;
+        flex-direction:column;
+        justify-content:space-between;
+        align-items: flex-end;
+        position:relative;
+        animation: change 10s ease-in-out infinite alternate-reverse;
+    }
+    
+    @keyframes change {
+        0% {
+            background-image: url("img/oluwa_burna.JPG");
+        }
+        25%{
+            background-image: url("img/tinashe_songs_for_you.JPG");
+        }
+        50% {
+            background-image: url("img/adekunle_gold_pic.JPG");
+        }
+        75% {
+            background-image: url("img/24kmagic_cover.JPG");
+        }
+        100% {
+            background-image: url("img/snohA.JPG");
+        }
+    }
+    
+    #theme main .container-mobile .box-mobile .circle-box-mobile {
+        background-image: url("img/twice_as_tall.JPG");
+        background-repeat:no-repeat;
+        background-size:100%;
+        background-position:center;
+        width:110px;
+        height:110px;
+        border-radius:50%;
+        margin-top:-50px;
+        position:absolute;
+        right:-10%;
+        animation: change2 10s ease-in-out infinite alternate-reverse;
+    }
+    
+    @keyframes change2 {
+        0% {
+            background-image: url("img/twice_as_tall.JPG");
+        }
+       
+        25%{
+            background-image: url("img/tinashe1.JPG");
+        }
+        50% {
+            background-image: url("img/adekunle_gold_cover.JPG");
+        }
+        75% {
+            background-image: url("img/bruno_mars.JPG");
+        }
+        100% {
+            background-image: url("img/snohsong.JPG");
+        }
+    }
+
+    #theme main .container-mobile .box-mobile .eye2 {
+        width:40px;
+        height:40px;
+        border-radius:75% 0;
+        transform: rotate(45deg);
+        /*border-radius: 50%;*/
+        border:2px solid grey;
+        background-color: #f8f8ff;
+        position:absolute;
+        bottom:0;
+        left:0;
+        margin-left:-10px;
+        margin-bottom:-10px;
+        display:flex;
+        justify-content:center;
+        align-items:center;
+    }
+
+    #theme main .container-mobile .box-mobile .eye2 .pupil2 {
+        width:18px;
+        height:18px;
+        border-radius:50%;
+        background-color:grey;
+        display:flex;
+        justify-content: center;
+        align-items: center;
+        animation: turn .85s infinite alternate-reverse;
+    }
+
+    @keyframes turn {
+        0% {
+            transform: translateX(-5px);
+        }
+        50% {
+            transform: translateX(5px);
+        }
+        80% {
+            transform: translateX(0px);
+        }
+        100% {
+            transform: translateX(0px);
+        }
+    }
+
+    #theme main .container-mobile .box-mobile .eye2 .pupil2 .iris2 {
+        width:10px;
+        height:10px;
+        border-radius:50%;
+        background-color:rgba(0, 0, 0, 0.644);
+    }
+    
+   
+    #theme main .content h4 {
+        text-align:center;
+        margin-top:70px;
+    }
+
+    #theme main .content h4 a {
+        text-decoration:none;
+        background-color:rgb(128, 128, 128);
+        border:2px solid rgb(128, 128, 128);
+        color:#fff;
+        padding:15px 40px;
+        border-radius:10px;
+    }
+
+    #theme main .content h4 a i {
+        margin-right:10px;
+    }
+
+    #theme header .logo, #theme .container .image-content {
+        display:none;
+    }
+}
+
+/* for screens smaller than 320px */
+
+@media screen and (max-width: 320px) {
+    body {
+        font-family: 'Poppins', sans-serif;
+        overflow-x: hidden;
+    }
+
+    .light {
+        width:100%;
+        height:100%;
+        color:black;
+        background-color:#f8f8ff;
+    }
+
+    .dark {
+        width:100%;
+        height:100%;
+        color:#fff;
+        background-color:#000;
+    }
+
+    
+    #theme header {
+        width:100%;
+        height:4rem;
+        display:flex;
+        align-items: center;
+    }
+
+    #theme header .box .toggle-btn {
+        width:40px;
+        height:20px;
+        background-color:grey;
+        margin-left:5px;
+        border-radius:10px;
+        position:relative;
+        box-shadow:1px 1px rgba(0, 0, 0, 0.589);
+        transition:all .2s ease-in-out;
+    }
+
+    #theme header .box .toggle-btn:hover {
+        cursor:pointer;
+    }
+
+    #theme header .box .toggle-btn .inner-circle {
+        width:20px;
+        height:20px;
+        background-color:#fff;
+        border-radius:50%;
+        position:absolute;
+        left:3%;
+        transition:all .2s ease-in-out;
+    }
+    
+    #theme header .logo2 {
+        margin-left:10px;
+        font-weight:bold;
+        font-size:2rem;
+        color:limegreen;
+        text-decoration:none;
+    }
+    
+    #theme header .box {
+        display:flex;
+        width:80%;
+        margin-left:auto;
+    }
+    
+    #theme header .box a {
+        margin-right:20px;
+        color:#000;
+        text-decoration:none;
+        font-weight:bold;
+    }
+    
+    #theme header .box a i {
+        margin-right:10px;
+    }
+
+    #theme main{
+        width:100%;
+        margin:40px auto;
+    }
+
+    #theme main .content {
+        width:90%;
+        margin:0 auto;
+    }
+
+}
+
+
